@@ -1,0 +1,10 @@
+Camera2D
+StaticBody2D
+CollisionShape2D
+AnimationPlayer
+ParallaxLayer
+ParallaxBackground
+AnimationTree
+AnimatedSprite2D
+CharacterBody2D
+Button

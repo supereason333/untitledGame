@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://q4i0xkbxiiic"]
+
+[ext_resource type="PackedScene" uid="uid://cgetv8kfh50a2" path="res://backgrounds/factory_bg.tscn" id="1_j7v18"]
+[ext_resource type="PackedScene" uid="uid://cxsnf6uw6i618" path="res://player/player.tscn" id="2_to3do"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_htxdh"]
+size = Vector2(1201.5, 121)
+
+[node name="Testing" type="Node2D"]
+
+[node name="FactoryBG" parent="." instance=ExtResource("1_j7v18")]
+
+[node name="MapCollisons" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapCollisons"]
+position = Vector2(609.25, 588.5)
+shape = SubResource("RectangleShape2D_htxdh")
+
+[node name="Player" parent="." instance=ExtResource("2_to3do")]
+position = Vector2(515, 447)
