@@ -1,4 +1,5 @@
+res://menus/main_menu.tscn
 res://player/player.tscn
 res://testing/testing.tscn
-res://menus/main_menu.tscn
 res://backgrounds/factory_bg.tscn
+res://player/player.gd

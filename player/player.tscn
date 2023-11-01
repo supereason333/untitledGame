@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cxsnf6uw6i618"]
+[gd_scene load_steps=28 format=3 uid="uid://cxsnf6uw6i618"]
 
 [ext_resource type="Texture2D" uid="uid://c8qeim2ejoavy" path="res://sprites/charc/fall/fall1.png" id="1_hdc2g"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_oofnr"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bvn8ggysprw2h" path="res://sprites/charc/run/run11.png" id="18_vgfq2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hekaw"]
+height = 32.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5bqt"]
 animations = [{
@@ -113,6 +114,48 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+
+[sub_resource type="Animation" id="Animation_xpql8"]
+resource_name = "fall"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Fall"]
+}
 
 [sub_resource type="Animation" id="Animation_7t8f0"]
 resource_name = "idle"
@@ -129,6 +172,47 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+
+[sub_resource type="Animation" id="Animation_sulvb"]
+resource_name = "jump"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump"]
 }
 
 [sub_resource type="Animation" id="Animation_psg2t"]
@@ -147,12 +231,26 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7y6hm"]
 _data = {
+"Fall": SubResource("Animation_xpql8"),
+"Idle": SubResource("Animation_7t8f0"),
+"Jump": SubResource("Animation_sulvb"),
 "RESET": SubResource("Animation_hgfbq"),
-"idle": SubResource("Animation_7t8f0"),
-"run": SubResource("Animation_psg2t")
+"Run": SubResource("Animation_psg2t")
 }
 
 [node name="Player" type="CharacterBody2D"]
@@ -162,11 +260,12 @@ script = ExtResource("1_oofnr")
 shape = SubResource("CapsuleShape2D_hekaw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.66667, 1.66667)
 sprite_frames = SubResource("SpriteFrames_p5bqt")
-animation = &"Run"
+animation = &"Idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle"
+autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_7y6hm")
 }
