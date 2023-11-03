@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cgetv8kfh50a2" path="res://backgrounds/factory_bg.tscn" id="1_j7v18"]
 [ext_resource type="PackedScene" uid="uid://cxsnf6uw6i618" path="res://player/player.tscn" id="2_to3do"]
-[ext_resource type="Texture2D" uid="uid://dprft2xf6mg2o" path="res://tilesets/grad tileset.png" id="3_hfa13"]
-[ext_resource type="Texture2D" uid="uid://cakfatg8cdduu" path="res://tilesets/slate metal tileset.png" id="4_dvnwf"]
+[ext_resource type="Texture2D" uid="uid://dprft2xf6mg2o" path="res://textures/tilesets/grad tileset.png" id="3_3ovgc"]
+[ext_resource type="Texture2D" uid="uid://cakfatg8cdduu" path="res://textures/tilesets/slate metal tileset.png" id="4_n3os1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htxdh"]
 size = Vector2(1201.5, 121)
@@ -12,7 +12,7 @@ size = Vector2(1201.5, 121)
 size = Vector2(144.375, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srmmd"]
-texture = ExtResource("3_hfa13")
+texture = ExtResource("3_3ovgc")
 1:1/0 = 0
 3:1/0 = 0
 5:1/0 = 0
@@ -58,7 +58,7 @@ texture = ExtResource("3_hfa13")
 18:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m26yj"]
-texture = ExtResource("4_dvnwf")
+texture = ExtResource("4_n3os1")
 1:1/0 = 0
 3:1/0 = 0
 5:1/0 = 0
