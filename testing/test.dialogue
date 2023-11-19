@@ -1,0 +1,14 @@
+~ start
+
+Sign: heres some dialgue
+if Global.read_test_sign == false
+	Sign: this is the first time im talking to you!!!
+	set Global.read_test_sign = true
+Sign: Heres some more dialogue
+- option one
+	Sign: You choose option 1
+- option two
+	Sign: You choose option 2
+Sign: Goodbye
+
+=> END

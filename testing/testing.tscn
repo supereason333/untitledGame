@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://q4i0xkbxiiic"]
+[gd_scene load_steps=12 format=3 uid="uid://q4i0xkbxiiic"]
 
 [ext_resource type="PackedScene" uid="uid://cgetv8kfh50a2" path="res://backgrounds/factory_bg.tscn" id="1_j7v18"]
 [ext_resource type="PackedScene" uid="uid://cxsnf6uw6i618" path="res://player/player.tscn" id="2_to3do"]
 [ext_resource type="Texture2D" uid="uid://dprft2xf6mg2o" path="res://textures/tilesets/grad tileset.png" id="3_3ovgc"]
 [ext_resource type="Texture2D" uid="uid://cakfatg8cdduu" path="res://textures/tilesets/slate metal tileset.png" id="4_n3os1"]
+[ext_resource type="Texture2D" uid="uid://c621hmpiycgws" path="res://textures/objects/test sign.png" id="5_2s5lx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htxdh"]
 size = Vector2(1201.5, 121)
@@ -104,6 +105,8 @@ texture = ExtResource("4_n3os1")
 sources/0 = SubResource("TileSetAtlasSource_srmmd")
 sources/1 = SubResource("TileSetAtlasSource_m26yj")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdnt"]
+
 [node name="Testing" type="Node2D"]
 
 [node name="FactoryBG" parent="." instance=ExtResource("1_j7v18")]
@@ -126,3 +129,16 @@ scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_4brsp")
 format = 2
 layer_0/tile_data = PackedInt32Array(720904, 196609, 1, 720905, 196609, 1, 720906, 196609, 1, 720907, 196609, 1, 720908, 196609, 1, 720909, 196609, 1, 720910, 196609, 1, 720911, 196609, 1, 720912, 196609, 1, 720896, 196609, 1, 720897, 196609, 1, 720898, 196609, 1, 720899, 196609, 1, 720900, 196609, 1, 720901, 196609, 1, 720902, 196609, 1, 720903, 196609, 1, 720913, 196609, 1, 720914, 196609, 1, 720915, 196609, 1, 720916, 196609, 1, 720917, 196609, 1, 720918, 196609, 1, 720919, 196609, 1, 720920, 196609, 1, 524302, 589825, 7, 524303, 720897, 7, 524304, 851969, 7)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="TestSign" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(696, 498)
+scale = Vector2(4, 4)
+texture = ExtResource("5_2s5lx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(696, 540)
+shape = SubResource("RectangleShape2D_uvdnt")
+
+[node name="dialogue" type="Node" parent="StaticBody2D"]

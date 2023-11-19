@@ -1,0 +1,23 @@
+~ start
+
+Sign: i'm a sign! 
+if Global.read_test_sign == false
+	Sign: its the first time meeting you!
+	set Global.read_test_sign = true
+Sign: [[Hi|Hello]] 
+- Hello!
+	Sign: Nice to meet you
+- fuck you!!!!!!!
+	Sign: swearing isnt nice!!!!!!!!!
+	=> END
+- third option
+	Sign: you choose the 3rd option, well done!
+
+Sign: well, what would you like to talk about?
+- Game lore
+	Sign: there like isnt any
+	Sign: GOodbye!!1!1!!1!
+- a
+	Sign: okay so like this is the testing its for testing goodbye
+
+=> END

@@ -10,7 +10,9 @@ var full_jump = false
 var jump_amount = 1 # double jumps
 var jump_left = jump_amount
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+var in_range_dialogue_object = false
+var in_dialogue = false
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimationPlayer")
 
@@ -68,3 +70,19 @@ func _physics_process(delta):
 	elif direction == 1:
 		get_node("AnimatedSprite2D").flip_h = false
 	move_and_slide()
+
+func _process(delta):
+	if in_range_dialogue_object and Input.is_action_just_pressed("ui_up") and not in_dialogue:
+		in_dialogue = true
+		DialogueManager.show_example_dialogue_balloon(load("res://testing/test.dialogue"), "start")
+	else:
+		in_dialogue = false
+
+func _on_detection_area_body_entered(body):
+	if body.has_node("dialogue"):
+		in_range_dialogue_object = true
+
+
+func _on_detection_area_body_exited(body):
+	if body.has_node("dialogue"):
+		in_range_dialogue_object = false

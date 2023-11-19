@@ -1,0 +1,164 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_o7csw"]
+
+[resource]
+script = ExtResource("1_o7csw")
+using_states = PackedStringArray()
+titles = {
+"start": "3"
+}
+character_names = PackedStringArray("Sign")
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "start",
+"type": "title"
+},
+"10": {
+"id": "10",
+"next_id": "11",
+"next_id_after": "12",
+"tags": PackedStringArray(),
+"text": "option two",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "option two",
+"type": "response"
+},
+"11": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "11",
+"next_id": "12",
+"parent_id": "10",
+"tags": PackedStringArray(),
+"text": "You choose option 2",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "You choose option 2",
+"type": "dialogue"
+},
+"12": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "12",
+"next_id": "14",
+"tags": PackedStringArray(),
+"text": "Goodbye",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Goodbye",
+"type": "dialogue"
+},
+"14": {
+"id": "14",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"3": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"tags": PackedStringArray(),
+"text": "heres some dialgue",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "heres some dialgue",
+"type": "dialogue"
+},
+"4": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "Global"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "read_test_sign"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "bool",
+"value": false
+}])
+},
+"id": "4",
+"next_conditional_id": "7",
+"next_id": "5",
+"next_id_after": "7",
+"type": "condition"
+},
+"5": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"parent_id": "4",
+"tags": PackedStringArray(),
+"text": "this is the first time im talking to you!!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "this is the first time im talking to you!!!",
+"type": "dialogue"
+},
+"6": {
+"id": "6",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "Global"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "read_test_sign"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "bool",
+"value": true
+}])
+},
+"next_id": "7",
+"parent_id": "4",
+"type": "mutation"
+},
+"7": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"tags": PackedStringArray(),
+"text": "Heres some more dialogue",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Heres some more dialogue",
+"type": "dialogue"
+},
+"8": {
+"id": "8",
+"next_id": "9",
+"next_id_after": "12",
+"responses": PackedStringArray("8", "10"),
+"tags": PackedStringArray(),
+"text": "option one",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "option one",
+"type": "response"
+},
+"9": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "9",
+"next_id": "12",
+"parent_id": "8",
+"tags": PackedStringArray(),
+"text": "You choose option 1",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "You choose option 1",
+"type": "dialogue"
+}
+}
+metadata/dialogue_manager_version = "2.28.0"

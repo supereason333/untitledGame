@@ -1,8 +1,7 @@
+res://gui/gui.tscn
+res://menus/main_menu.tscn
 res://player/player.tscn
 res://testing/testing.tscn
-res://menus/main_menu.tscn
 res://backgrounds/factory_bg.tscn
-res://dialogue system/dialouge system.tscn
-res://dialogue system/dialouge system.gd
-res://autoload/dialogue system/dialouge system.gd
-res://autoload/dialogue system/dialouge system.tscn
+res://global/game.gd
+res://player/player.gd

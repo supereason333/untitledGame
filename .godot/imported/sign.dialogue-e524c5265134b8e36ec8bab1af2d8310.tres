@@ -1,0 +1,250 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_2pktj"]
+
+[resource]
+script = ExtResource("1_2pktj")
+using_states = PackedStringArray()
+titles = {
+"start": "3"
+}
+character_names = PackedStringArray("Sign")
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "start",
+"type": "title"
+},
+"10": {
+"id": "10",
+"next_id": "11",
+"next_id_after": "16",
+"tags": PackedStringArray(),
+"text": "fuck you!!!!!!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "fuck you!!!!!!!",
+"type": "response"
+},
+"11": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "11",
+"next_id": "12",
+"parent_id": "10",
+"tags": PackedStringArray(),
+"text": "swearing isnt nice!!!!!!!!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "swearing isnt nice!!!!!!!!!",
+"type": "dialogue"
+},
+"12": {
+"id": "12",
+"is_snippet": false,
+"next_id": "end",
+"parent_id": "10",
+"type": "goto"
+},
+"13": {
+"id": "13",
+"next_id": "14",
+"next_id_after": "16",
+"tags": PackedStringArray(),
+"text": "third option",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "third option",
+"type": "response"
+},
+"14": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "14",
+"next_id": "16",
+"parent_id": "13",
+"tags": PackedStringArray(),
+"text": "you choose the 3rd option, well done!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "you choose the 3rd option, well done!",
+"type": "dialogue"
+},
+"16": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "16",
+"next_id": "17",
+"tags": PackedStringArray(),
+"text": "well, what would you like to talk about?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "well, what would you like to talk about?",
+"type": "dialogue"
+},
+"17": {
+"id": "17",
+"next_id": "18",
+"next_id_after": "23",
+"responses": PackedStringArray("17", "20"),
+"tags": PackedStringArray(),
+"text": "Game lore",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Game lore",
+"type": "response"
+},
+"18": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "18",
+"next_id": "19",
+"parent_id": "17",
+"tags": PackedStringArray(),
+"text": "there like isnt any",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "there like isnt any",
+"type": "dialogue"
+},
+"19": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "19",
+"next_id": "23",
+"parent_id": "17",
+"tags": PackedStringArray(),
+"text": "GOodbye!!1!1!!1!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "GOodbye!!1!1!!1!",
+"type": "dialogue"
+},
+"20": {
+"id": "20",
+"next_id": "21",
+"next_id_after": "23",
+"tags": PackedStringArray(),
+"text": "a",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "a",
+"type": "response"
+},
+"21": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "21",
+"next_id": "23",
+"parent_id": "20",
+"tags": PackedStringArray(),
+"text": "okay so like this is the testing its for testing goodbye",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "okay so like this is the testing its for testing goodbye",
+"type": "dialogue"
+},
+"23": {
+"id": "23",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"3": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"tags": PackedStringArray(),
+"text": "i'm a sign!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "i'm a sign!",
+"type": "dialogue"
+},
+"4": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "Global"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "read_test_sign"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "bool",
+"value": false
+}])
+},
+"id": "4",
+"next_conditional_id": "7",
+"next_id": "5",
+"next_id_after": "7",
+"type": "condition"
+},
+"5": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"parent_id": "4",
+"tags": PackedStringArray(),
+"text": "its the first time meeting you!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "its the first time meeting you!",
+"type": "dialogue"
+},
+"6": {
+"id": "6",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "Global"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "read_test_sign"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "bool",
+"value": true
+}])
+},
+"next_id": "7",
+"parent_id": "4",
+"type": "mutation"
+},
+"7": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"tags": PackedStringArray(),
+"text": "[[Hi|Hello]]",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[Hi|Hello]]",
+"type": "dialogue"
+},
+"8": {
+"id": "8",
+"next_id": "9",
+"next_id_after": "16",
+"responses": PackedStringArray("8", "10", "13"),
+"tags": PackedStringArray(),
+"text": "Hello!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Hello!",
+"type": "response"
+},
+"9": {
+"character": "Sign",
+"character_replacements": Array[Dictionary]([]),
+"id": "9",
+"next_id": "16",
+"parent_id": "8",
+"tags": PackedStringArray(),
+"text": "Nice to meet you",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Nice to meet you",
+"type": "dialogue"
+}
+}
+metadata/dialogue_manager_version = "2.28.0"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cxsnf6uw6i618"]
+[gd_scene load_steps=29 format=3 uid="uid://cxsnf6uw6i618"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_oofnr"]
 [ext_resource type="Texture2D" uid="uid://c8qeim2ejoavy" path="res://textures/sprites/charc/fall/fall1.png" id="2_3c88j"]
@@ -21,7 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://bvn8ggysprw2h" path="res://textures/sprites/charc/run/run11.png" id="19_8kqaf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hekaw"]
-height = 32.0
+radius = 22.0
+height = 80.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5bqt"]
 animations = [{
@@ -253,6 +254,9 @@ _data = {
 "Run": SubResource("Animation_psg2t")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yx7vj"]
+radius = 225.435
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_oofnr")
 
@@ -260,7 +264,7 @@ script = ExtResource("1_oofnr")
 shape = SubResource("CapsuleShape2D_hekaw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.66667, 1.66667)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_p5bqt")
 animation = &"Idle"
 
@@ -271,3 +275,11 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="detection_area" type="Area2D" parent="."]
+
+[node name="detection" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_yx7vj")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
